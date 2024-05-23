@@ -4,6 +4,7 @@ import { ThemedView } from '@/components/ThemedView';
 import Welcome from '@/components/Scrrens/Welcome'
 import Login from '@/components/Scrrens/Login';
 import Signup from '@/components/Scrrens/Signup';
+import Verification from '@/components/Verification';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -28,7 +29,11 @@ export default function HomeScreen() {
           component={Login}
           options={{ headerShown: false }}
           
-          
+          />
+           <Stack.Screen
+          name="Verification"
+          component={Verification}
+          options={{ headerShown: false }}
           
           />
 
