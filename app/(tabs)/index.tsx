@@ -27,6 +27,9 @@ export default function HomeScreen() {
           name="Login"
           component={Login}
           options={{ headerShown: false }}
+          
+          
+          
           />
 
       </Stack.Navigator>
