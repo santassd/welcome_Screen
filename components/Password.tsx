@@ -9,13 +9,12 @@ import Button from './Button';
 import {NavigationProp} from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-
 const { width, height } = Dimensions.get("window");
-interface VerificationProps {
+interface PasswordProps {
   navigation: NavigationProp<any>;
 }
 
-const Verification: React.FC<VerificationProps> = ({ navigation }) => {
+const Password: React.FC<PasswordProps> = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <LinearGradient colors={["rgba(0, 166, 255,1)", "rgba(0, 191, 255,-.45)"]} style={{ flex: 1 }}>
@@ -24,34 +23,46 @@ const Verification: React.FC<VerificationProps> = ({ navigation }) => {
            <TouchableOpacity onPress={() => { console.log("Back button pressed"); navigation.goBack(); }}>
                   <Ionicons name="arrow-back" size={24} color="#fff" style={styles.backButton} />
                        </TouchableOpacity>
-                <Text style={styles.headerText}>Verification</Text>
-              </View>
-              <View style={styles.footer}>
-                <Text style={styles.normalText}>A four digit code was sent to your mobile number</Text>
-                <Text style={{color:'grey',paddingLeft:100,bottom:80}}>+8801XXXX-XXXXX</Text>
-              </View>
-              <View style={styles.footer}>
-                <Text style={{top:-180,paddingLeft:10,fontSize:18}}>Enter the OTP</Text>
-                <View style={styles.inputContainer}>
-                  <TextInput
-                    style={styles.input}
-                    placeholder="Enter your OTP"
-                    placeholderTextColor="#D3D3D3"
-                    keyboardType="phone-pad"
-                  />
+                <Text style={styles.headerText}>Password</Text>
                 </View>
-                <Text style={{color:'grey',paddingLeft:280,top:-211}}>Resend</Text>
-                <Text style={{color:'deepskyblue',paddingLeft:217,top:-188}}>Use email instead</Text>
-                <Button
-                  style={{ bottom: 0, top:-160 }}
-                  title="Confirm"
-                  onPress={() => navigation.navigate('Password')}
-                />
-              </View>
-            </LinearGradient>
+        <View style={styles.footer}>
+          <Text style={{ color: "#D3D3D3", fontSize: 14, paddingLeft: 29,top:14 }}>Set the password to enter the best resident</Text>
+          <Text style={{color:'#D3D3D3',fontSize:14,paddingLeft:100,top:16}}>management area</Text>
+          <Text style={styles.footerText}>Password</Text>
+          <View style={styles.inputContainer}>
+          <TextInput
+          style={styles.input}
+          placeholder="Enter your password"
+          placeholderTextColor="#D3D3D3"
+          keyboardType="default"
+          secureTextEntry={true}
+        />
+        </View>
+        <Text style={styles.footerText}>Confirm password</Text>
+          <View style={styles.inputContainer}>
+            <TextInput
+              style={styles.input}
+              placeholder="Confirm your password"
+              placeholderTextColor="#D3D3D3"
+              keyboardType="default"
+              secureTextEntry={true}
+
+            />
+          </View>
+          <Button
+            style={{ bottom: 0, top: 50 }}
+            title="Continue"
+            onPress={() => navigation.navigate('Completeprofile')}
+          />
+        </View>
+              </LinearGradient>
     </SafeAreaView>
   )
 }
+
+
+
+
 
 const styles = StyleSheet.create({
   header: {
@@ -79,7 +90,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     paddingLeft: 10,
-    paddingTop: 22,
+    paddingTop: 65,
     fontSize: 18,
     color: '#000000'
   },
@@ -90,10 +101,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 6,
     justifyContent: 'center',
-    marginVertical: 6,
+    marginVertical: -2,
     paddingLeft: 20,
-    bottom:170
+    bottom:-10
   },
+  
   input: {
     flex: 1,
     fontSize: 16,
@@ -106,9 +118,14 @@ const styles = StyleSheet.create({
     paddingLeft:18,
     paddingTop:103,
   },
+
+  emoji: {
+    fontSize: 24,
+    paddingLeft: 10,
+  }
 });
 
-export default Verification;
+export default Password
 
 
 

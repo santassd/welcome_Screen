@@ -9,6 +9,7 @@ import Button from '../Button';
 import { NavigationProp } from '@react-navigation/native';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
+
 const { width, height } = Dimensions.get("window");
 
 interface SignupProps {
@@ -72,31 +73,11 @@ const Signup: React.FC<SignupProps> = ({ navigation }) => {
             <Text style={{ color: '#00BFFF', top: 11, paddingLeft: 219 }}>Log in</Text>
           </TouchableOpacity>
           </View>
-      
       </LinearGradient>
     </SafeAreaView>
 
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const styles = StyleSheet.create({
