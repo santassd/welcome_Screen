@@ -54,11 +54,11 @@ const Signup: React.FC<SignupProps> = ({ navigation }) => {
               keyboardType="phone-pad"
             />
           </View>
-          <Text style={styles.footerText}>E-mail</Text>
+          <Text style={styles.footerText}>E-mail Adress</Text>
           <View style={styles.inputContainer}>
             <TextInput
               style={styles.input}
-              placeholder="Enter your E-mail"
+              placeholder="Enter your E-mail Adress"
               placeholderTextColor="#D3D3D3"
               keyboardType="default"
             />
@@ -72,6 +72,8 @@ const Signup: React.FC<SignupProps> = ({ navigation }) => {
           <TouchableOpacity onPress={() => navigation.navigate('Login')}>
             <Text style={{ color: '#00BFFF', top: 11, paddingLeft: 219 }}>Log in</Text>
           </TouchableOpacity>
+          <Text style={{color:'#00BFFF',top:34,paddingLeft:92}}>Terms and Conditions</Text>
+          <Text style={{color:'#00BFFF',top:48,paddingLeft:114}}>Privacy policy</Text>
           </View>
       </LinearGradient>
     </SafeAreaView>
@@ -106,7 +108,7 @@ const styles = StyleSheet.create({
   },
   footerText: {
     paddingLeft: 10,
-    paddingTop: 22,
+    paddingTop: 18,
     fontSize: 18,
     color: '#000000'
   },

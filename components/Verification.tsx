@@ -31,19 +31,21 @@ const Verification: React.FC<VerificationProps> = ({ navigation }) => {
                 <Text style={{color:'grey',paddingLeft:100,bottom:80}}>+8801XXXX-XXXXX</Text>
               </View>
               <View style={styles.footer}>
-                <Text style={{top:-180,paddingLeft:10,fontSize:18}}>Enter the OTP</Text>
+                <Text style={{top:-180,paddingLeft:10,fontSize:18}}>Enter the Code</Text>
                 <View style={styles.inputContainer}>
                   <TextInput
                     style={styles.input}
-                    placeholder="Enter your OTP"
+                    placeholder="Code goes here"
                     placeholderTextColor="#D3D3D3"
                     keyboardType="phone-pad"
                   />
                 </View>
                 <Text style={{color:'grey',paddingLeft:280,top:-211}}>Resend</Text>
-                <Text style={{color:'deepskyblue',paddingLeft:217,top:-188}}>Use email instead</Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Verifications')}>
+                <Text style={{color:'deepskyblue',paddingLeft:120,top:-100}}>Use email instead</Text>
+                </TouchableOpacity>
                 <Button
-                  style={{ bottom: 0, top:-160 }}
+                  style={{ bottom: 0, top:-190 }}
                   title="Confirm"
                   onPress={() => navigation.navigate('Password')}
                 />
@@ -72,7 +74,7 @@ const styles = StyleSheet.create({
     paddingTop: 24,
   },
   footer: {
-    flex: 12,
+    flex: 10,
     backgroundColor: '#ffffff',
     paddingHorizontal: 10,
     paddingVertical: 8
