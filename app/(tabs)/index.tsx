@@ -8,6 +8,7 @@ import Password from '@/components/Password';
 import Verification from '@/components/Verification';
 import Completeprofile from '@/components/Completeprofile';
 import Verifications from '@/components/Verifications';
+import EventScreen from '@/components/EventScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -57,6 +58,12 @@ export default function HomeScreen() {
          <Stack.Screen
            name="Verifications"
            component={Verifications}
+           options={{headerShown:false}}
+
+          />
+          <Stack.Screen
+           name="EventScreen"
+           component={EventScreen}
            options={{headerShown:false}}
 
           />

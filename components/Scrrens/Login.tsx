@@ -61,7 +61,7 @@ const Login: React.FC<LoginProps> = ({ navigation }) => {
           <Button
             style={{ bottom: 0, top: 40 }}
             title="Log in"
-            onPress={() => navigation.navigate('OwnerSignup')}
+            onPress={() => navigation.navigate('EventScreen')}
           />
           <TouchableOpacity onPress={() => navigation.navigate('Verification')}>
             <Text style={{ color: '#D3D3D3', top: -55, paddingLeft: 10 }}>Forget Password?</Text>
