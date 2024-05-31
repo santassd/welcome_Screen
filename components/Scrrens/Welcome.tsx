@@ -8,6 +8,8 @@ interface WelcomeProps {
   navigation: NavigationProp<any>;
 }
 
+console.log('check username');
+
 const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
   return (
     <View style={styles.container}>

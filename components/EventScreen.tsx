@@ -21,21 +21,21 @@ interface EventScreenProps {
 }
 
 const events: Event[] = [
-  { id: '1', date: '28 Feb', time: '07:00AM - 09:00AM', title: 'Event Title Goes Here', status: 'Event Confirmed' },
-  { id: '2', date: '30 Jun', time: '08:00AM - 10:00AM', title: 'Event Title Goes Here', status: 'Not Confirmed' },
-  { id: '3', date: '10 Jan', time: '09:00AM - 10:00AM', title: 'Event Title Goes Here', status: 'Event Cancelled' },
+  { id: '1', date: '19 May', time: '07:00AM - 09:00AM', title: 'Event Title Goes Here', status: 'Event Confirmed' },
+  { id: '2', date: '03 May', time: '08:00PM - 10:00PM', title: 'Event Title Goes Here', status: 'Not Confirmed' },
+  { id: '3', date: '29 May', time: '09:00AM - 10:00AM', title: 'Event Title Goes Here', status: 'Event Cancelled' },
 ];
 
 const getStatusColor = (status: string) => {
   switch (status) {
     case 'Event Confirmed':
-      return '#00A6FF'; // Blue
+      return '#3489eb'; 
     case 'Not Confirmed':
-      return '#D3D3D3'; // Grey
+      return '#6c757d'; 
     case 'Event Cancelled':
-      return '#90EE90'; // LightGreen 
+      return '#28a745'; 
     default:
-      return '#00A6FF'; // Default color
+      return '#00A6FF'; 
   }
 };
 
@@ -58,12 +58,12 @@ const EventScreen: React.FC<EventScreenProps> = ({ navigation }) => {
           <Calendar
             current={'2024-05-28'}
             markedDates={{
-              '2024-05-29': { selected: true },
+              '2024-05-19': { selected: true },
               '2024-05-03': { selected: true },
-              '2024-05-09': { selected: true },
+              '2024-05-29': { selected: true },
             }}
             theme={{
-              calendarBackground: '#ffffff',
+              calendarBackground: '#f5f5f5',
               textSectionTitleColor: '#b6c1cd',
               selectedDayBackgroundColor: '#00ADF5',
               selectedDayTextColor: '#ffffff',
@@ -107,34 +107,36 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 20,
     color: '#fff',
-    paddingRight: 170,
+    paddingRight: 190,
   },
   calendarContainer: {
     flex: 4,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f5f5f5',
     paddingHorizontal: 24,
-    paddingVertical: 10,
+    paddingVertical: 1,
     borderColor:'#00ADF5',
+    
   },
 
   footer: {
     flex: 5,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#f5f5f5',
     paddingHorizontal: 10,
     paddingVertical: 6,
   },
   footerHeader: {
     fontSize: 18,
     color: '#000',
-    marginBottom: 10,
+    marginBottom: 12,
   },
   eventContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#f5f5f5',
-    marginBottom: 10,
-    padding: 6,
-    borderRadius: 5,
+    backgroundColor: '#ffffff',
+    marginBottom:5,
+    padding:1,
+    borderRadius: 2,
+    
   },
   eventDate: {
     fontSize: 14,
@@ -143,14 +145,17 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderColor:'#D3D3D3',
     borderWidth:1,
-    height:40
+    height:40,
+    paddingLeft:3,
+    
+    
   },
   eventDetails: {
     flex: 1,
     paddingLeft: 10,
   },
   eventTime: {
-    fontSize: 14,
+    fontSize: 15,
     color: '#000',
     paddingLeft:20
   },
@@ -168,10 +173,12 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     alignSelf: 'flex-end',
     marginTop: 7,
-    top:-40
+    top:-43
    
   }
 
 });
+
+
 
 export default EventScreen;
