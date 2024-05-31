@@ -9,6 +9,7 @@ interface WelcomeProps {
 }
 
 console.log('check username');
+console.log('check email');
 
 const Welcome: React.FC<WelcomeProps> = ({ navigation }) => {
   return (
